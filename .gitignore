@@ -2,3 +2,4 @@
 .direnv
 .envrc
 .DS_Store
+*.cache
