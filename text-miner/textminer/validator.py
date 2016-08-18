@@ -24,17 +24,17 @@ def words(string, count=None):
     return bool(match)
 
 
-def phone_number(number):
-    return re.match(r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$', number)
-#
-#
-# def money():
-#     pass
-#
-#
-# def zip():
-#     pass
-#
-#
-# def date():
-#     pass
+def phone_number(string):
+    return re.match(r'(?:\(?(\d{3})\)?[\-\.]?\s*)?(\d{3})[\-\.]?\s*(\d{4})', string)
+
+
+def money(string):
+    return re.match(r'^\$(?:0|[1-9]\d{0,2}(?:,?\d{3})*)(?:\.?\d{2})?$', string)
+
+
+def zipcode(string):
+    return re.match(r"^\d{5}(\-?\d{4})?$", string)
+
+
+def date(string):
+    return re.match(r"^\d{1,4}[/-]\d{1,2}[/-]\d{1,4}", string)
