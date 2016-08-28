@@ -14,7 +14,7 @@ params = pytest.mark.parametrize
 def test_words(input, expected):
     assert s.words(input) == expected
 
-
+@xfail
 @params("input,expected", [
     ("919-555-1212", {"area_code": "919", "number": "555-1212"}),
     ("(919) 555-1212", {"area_code": "919", "number": "555-1212"}),
@@ -25,7 +25,6 @@ def test_words(input, expected):
 ])
 def test_phone_numbers(input, expected):
     assert s.phone_number(input) == expected
-
 
 @xfail
 @params("input,expected", [
@@ -54,7 +53,6 @@ def test_money(input, expected):
     currencies later."""
     assert s.money(input) == expected
 
-
 @xfail
 @params("input,expected", [
     ("63936", {"zip": "63936", "plus4": None}),
@@ -69,7 +67,6 @@ def test_money(input, expected):
 ])
 def test_zip(input, expected):
     assert s.zipcode(input) == expected
-
 
 @xfail
 @params("input,expected", [

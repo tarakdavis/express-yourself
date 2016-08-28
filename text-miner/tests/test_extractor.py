@@ -1,8 +1,7 @@
 import pytest
+import textminer.extractor as x
 xfail = pytest.mark.xfail
 params = pytest.mark.parametrize
-
-import textminer.extractor as x
 
 
 def test_phone_numbers():
